@@ -1,12 +1,5 @@
 [
-  {
-    "date":"2025-08-01",
-    "word":"apple",
-    "puzzleData": {"guesses":[]}
-  },
-  {
-    "date":"2025-08-02",
-    "word":"brain",
-    "puzzleData": {"guesses":[]}
-  }
+  {"date":"2025-08-01","word":"apple"},
+  {"date":"2025-08-02","word":"brain"},
+  {"date":"2025-08-03","word":"crane"}
 ]
