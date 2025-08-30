@@ -2,32 +2,33 @@ name: Update Wordle Archive
 
 on:
   schedule:
-    - cron: '0 0 * * *' # runs every day at UTC midnight
-  workflow_dispatch: # optional manual trigger
+    - cron: '0 0 * * *' # runs daily at UTC midnight
+  workflow_dispatch: # allows manual triggering
 
 jobs:
   update-archive:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2. Set up Node.js (needed to run the updateArchive.js script)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
-
+      # 3. Run your archive update script
       - name: Update archive.json
         run: node scripts/updateArchive.js
 
-      - name: Commit and push changes
+      # 4. Commit and push changes if any
+      - name: Commit and push archive changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add Wordle_Archive/archive.json
-          git commit -m "Add puzzle for $(date +'%Y-%m-%d')" || echo "No changes"
+          git diff-index --quiet HEAD || git commit -m "Add puzzle for $(date +'%Y-%m-%d')"
           git push
