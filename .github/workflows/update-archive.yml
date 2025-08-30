@@ -22,7 +22,7 @@ jobs:
 
       # 3. Run your archive update script
       - name: Update archive.json
-        run: node scripts/updateArchive.js
+        run: node Wordle_Archive/scripts/updateArchive.js
 
       # 4. Commit and push changes if any
       - name: Commit and push archive changes
