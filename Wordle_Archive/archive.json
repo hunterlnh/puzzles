@@ -1,0 +1,12 @@
+[
+  {
+    "date":"2025-08-01",
+    "word":"apple",
+    "puzzleData": {"guesses":[]}
+  },
+  {
+    "date":"2025-08-02",
+    "word":"brain",
+    "puzzleData": {"guesses":[]}
+  }
+]
