@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Import your word list (same as targetWords in script.js)
-const { targetWords } = require('../targetWords.js'); 
+const { targetWords } = require('../../Wordle/targetWords.js'); 
 
 const archivePath = path.join(__dirname, '../Wordle_Archive/archive.json');
 
