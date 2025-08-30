@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.correct {
+  background-color: #6aaa64; /* green */
+  color: white;
+}
+
+.present {
+  background-color: #c9b458; /* yellow */
+  color: white;
+}
+
+.absent {
+  background-color: #787c7e; /* gray */
+  color: white;
+}
