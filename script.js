@@ -14,11 +14,11 @@ function startGame(secretWord) {
   const button = document.getElementById("submit-btn");
   const message = document.getElementById("message");
 
-  // Adjust input length dynamically
+  // Input length and placeholder
   input.setAttribute("maxlength", secretWord.length);
   input.setAttribute("placeholder", `Enter ${secretWord.length} letters`);
 
-  // Build empty board
+  // Build the board grid
   board.innerHTML = "";
   board.style.gridTemplateColumns = `repeat(${secretWord.length}, 50px)`;
   for (let i = 0; i < maxGuesses * secretWord.length; i++) {
@@ -66,7 +66,7 @@ function startGame(secretWord) {
   });
 }
 
-// Kick off the game
+// Start the game with a random word
 getRandomWord().then(secretWord => {
   startGame(secretWord);
 });
